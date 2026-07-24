@@ -24,10 +24,10 @@ function About({ onBookRoom }) {
 
         <div className="relative z-10 text-center px-6">
           <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-[#cca85a] block mb-3 animate-fade-in">
-            Discover Our Philosophy
+            HERE'S HOW IT ALL STARTED
           </span>
           <h1 className="font-serif text-4xl md:text-6xl text-white font-medium tracking-tight">
-            Our Story & Heritage
+            OUR PHILOSOPHY & Heritage
           </h1>
         </div>
       </div>

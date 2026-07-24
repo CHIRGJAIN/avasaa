@@ -20,21 +20,21 @@ function Home({ onBookRoom }) {
   const slides = [
     {
       image: heroImg,
-      subtitle: "Luxury Mountain Sanctuary",
-      title: <>Handcrafted Logs. <span className="italic font-light">Whispers of Pine.</span></>,
-      description: "Deep in Jibhi's forest valley, find a private retreat designed to let you slow down, breathe the clean air, and reconnect with nature."
+      subtitle: "SERI VILLAGE • JIBHI",
+      title: <>Come Home. <span className="italic font-light">To The Mountains..</span></>,
+      description: "Some places are visited. Others are felt. Nestled in the quiet village of Seri, Avasaa invites you to pause, reconnect, and experience the mountains at their own pace."
     },
     {
       image: heroBalcony,
-      subtitle: "Tirthan Valley Views",
+      subtitle: "UNINTERRUPTED VIEWS",
       title: <>A Balcony Above <span className="italic font-light">The Whispering Clouds.</span></>,
-      description: "Wake up to prayer flags dancing in the valley wind and majestic pine-crested mountain vistas draped in morning mist."
+      description: "Watch the clouds roll through the valley from your balcony, sip your morning coffee in silence, and let the mountains remind you how peaceful life can feel."
     },
     {
       image: heroWinter,
-      subtitle: "Seasonal Alpine Magic",
-      title: <>A Cozy Fireplace. <span className="italic font-light">Snow-Covered Slopes.</span></>,
-      description: "Witness Jibhi's magical winter landscape under pristine blue skies, before retreating to the warmth of your fireplace."
+      subtitle: "A TABLE WITH A VIEW",
+      title: <>More Than A Café. <span className="italic font-light">It's Where Days Slow Down.</span></>,
+      description: "The laughter around the table, the warmth of a fresh meal, the view beyond the window. These are the moments people carry home from Avasaa."
     }
   ];
 
@@ -260,7 +260,7 @@ function Home({ onBookRoom }) {
         </div>
       </section>
 
-      {/* Section 2: Welcome to Avasaa Stays */}
+      {/* Section 2: Redefining Experiential Luxury */}
       <section id="about" className="py-28 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
@@ -285,19 +285,13 @@ function Home({ onBookRoom }) {
               />
             </div>
 
-            {/* Rotating Emblem Badge */}
-            <div className="absolute top-4 right-4 w-28 h-28 bg-[#c2a25a] text-[#1f432d] rounded-full flex items-center justify-center p-3 text-center shadow-lg animate-spin-slow pointer-events-none select-none z-15">
-              <p className="font-sans text-[8px] font-bold tracking-[0.2em] leading-normal uppercase">
-                AVASAA • RETREAT • SILENCE • LUXURY •
-              </p>
-            </div>
           </div>
 
           {/* Right Column: Editorial Text & Philosophy Pillars */}
           <div className="lg:col-span-6 reveal space-y-8">
             <div className="space-y-3">
               <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary block">
-                Our Story
+                OUR PHILOSOPHY
               </span>
               <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
                 Welcome to <span className="italic">Avasaa Stays</span>
@@ -306,40 +300,34 @@ function Home({ onBookRoom }) {
 
             {/* High-end introduction statement */}
             <p className="font-serif text-lg md:text-xl text-primary italic leading-relaxed font-light border-l-2 border-secondary/40 pl-6">
-              "Avaasa is more than a destination; it's an invitation to slow down, listen to the whispering deodars, and reconnect with yourself."
+              We believe true luxury is having the time to watch the clouds drift by, share an unhurried meal, and wake up with nowhere else you'd rather be.
             </p>
 
-            {/* Pillars Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-              <div className="space-y-2">
-                <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-[#cca85a]">
-                  01 / The Luxury of Silence
-                </h4>
-                <p className="text-on-surface-variant font-sans text-sm font-light leading-relaxed">
-                  Nestled deep in the Tirthan valley forest, where the rustle of pine needles and distant murmur of the river become your natural soundtrack.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-[#cca85a]">
-                  02 / Local Craftsmanship
-                </h4>
-                <p className="text-on-surface-variant font-sans text-sm font-light leading-relaxed">
-                  Our private log sanctuaries are carved carefully from local pinewood and river stone, letting the mountains breathe into every room.
-                </p>
-              </div>
+            <div className="space-y-4 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
+              <p>
+                Some places are made for ticking off destinations.<br />
+                <span className="font-semibold text-primary">Avasaa is made for slowing down.</span>
+              </p>
+              <p>
+                Located in the quiet village of Seri, Jibhi, Avasaa offers a different pace of travel. Mornings begin with birdsong instead of traffic. Evenings end under star-filled skies. The days in between are yours to spend however you like.
+              </p>
+              <p className="italic">
+                Read a book on the balcony.<br />
+                Work with the mountains as your backdrop.<br />
+                Go chasing waterfalls or do absolutely nothing.
+              </p>
             </div>
 
             <div className="pt-6 border-t border-outline-variant/30 flex items-center justify-between flex-wrap gap-4">
               <div>
-                <p className="font-serif text-xl italic text-secondary font-light">Avasaa Stays Team</p>
-                <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-sans">ESTD. 2024 • Jibhi</span>
+                <p className="font-serif text-xl italic text-secondary font-light"></p>
+                <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-sans"></span>
               </div>
               <Link
                 to="/about"
                 className="inline-flex items-center font-sans text-xs font-semibold uppercase tracking-widest text-primary group border-b-2 border-primary/20 pb-1 hover:border-primary transition-all duration-300"
               >
-                Discover Our Philosophy
+                HERE'S HOW IT ALL STARTED
                 <span className="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-2">
                   arrow_right_alt
                 </span>
@@ -350,15 +338,15 @@ function Home({ onBookRoom }) {
         </div>
       </section>
 
-      {/* Section 3: Luxury Accommodation */}
+      {/* Section 3: The Stay */}
       <section className="bg-[#fcfbf9] py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 reveal">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary mb-4 block">
-              The Retreat
+              CRAFTED FOR COMFORT
             </span>
             <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium">
-              Luxury Accommodation
+              The Stay
             </h2>
             <div className="h-[1px] bg-gradient-to-r from-transparent via-[#c2a25a]/30 to-transparent w-32 mx-auto mt-4"></div>
           </div>
@@ -424,15 +412,14 @@ function Home({ onBookRoom }) {
                 {/* 1. Image Section (Top) */}
                 <div className="relative aspect-[16/10] overflow-hidden group">
                   <img
-                    className={`w-full h-full transition-transform duration-700 group-hover:scale-103 ${
-                      room.containImage ? 'object-contain bg-stone-100/60' : 'object-cover'
-                    }`}
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-103 ${room.containImage ? 'object-contain bg-stone-100/60' : 'object-cover'
+                      }`}
                     alt={room.name}
                     src={room.image}
                     style={{ objectPosition: room.imagePosition || 'center' }}
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-300"></div>
-                  
+
                   {/* Rating Scorecard Badge (Overlay Top Right) */}
                   <div className="absolute top-3 right-3 bg-[#1f432d] text-white font-sans text-xs font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md backdrop-blur-md">
                     <span>{room.rating}</span>
@@ -484,7 +471,7 @@ function Home({ onBookRoom }) {
 
                 {/* 3. Pricing & Booking Column (Bottom) */}
                 <div className="p-5 pt-0 flex flex-col justify-between items-stretch">
-                  
+
                   {/* Pricing and Tax details */}
                   <div className="text-left border-t border-outline-variant/30 pt-3 space-y-0.5">
                     <div className="flex items-center gap-1.5">
@@ -528,21 +515,21 @@ function Home({ onBookRoom }) {
             Immerse Yourself
           </span>
           <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
-            Curated Alpine Experiences
+            Curated Experiences
           </h2>
           <p className="font-sans text-base text-on-surface-variant font-light leading-relaxed">
-            At Avasaa Stays, the mountain is your playground. We've designed a collection of experiences that allow you to engage with nature on your own terms, from high-adrenaline treks to quiet moments of reflection.
+            Designed around the rhythm of the mountains, our experiences are simple, authentic, and deeply rooted in the place we call home.
           </p>
         </div>
 
         {/* 3-Column Image-Driven Experiences Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
 
-          {/* Card 1: Ancient Forest Walks */}
+          {/* Card 1: Village Walks */}
           <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
             <img
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] ease-out group-hover:scale-108"
-              alt="Ancient Forest Walks"
+              alt="Village Walks"
               src={forestWalkImg}
             />
             {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
@@ -552,19 +539,20 @@ function Home({ onBookRoom }) {
             <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
               <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">01</span>
               <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                Ancient Forest Walks
+                Village Walks
               </h3>
               <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Guided trails through 100-year-old cedar groves with pristine mountain views.
+                Walk Through Mountain Life
+                Take a leisurely stroll through the quiet lanes of Seri, where every corner tells a story.
               </p>
             </div>
           </div>
 
-          {/* Card 2: Riverside Meditations */}
+          {/* Card 2: HIDDEN TRAILSs */}
           <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
             <img
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] ease-out group-hover:scale-108"
-              alt="Riverside Meditations"
+              alt="HIDDEN TRAILSs"
               src={thumb4}
             />
             {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
@@ -574,10 +562,11 @@ function Home({ onBookRoom }) {
             <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
               <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">02</span>
               <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                Riverside Meditations
+                HIDDEN TRAILS
               </h3>
               <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Find your inner zen accompanied by the crystal-clear waters of the Tirthan River.
+                Take the Path Less Travelled
+                Leave the crowds behind and wander along peaceful forest trails.
               </p>
             </div>
           </div>
@@ -597,10 +586,11 @@ function Home({ onBookRoom }) {
             <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
               <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">03</span>
               <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                Signature Bonfires
+                Forest Picnic
               </h3>
               <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Gastronomic delights cooked over an open mountain fire beneath starry skies.
+                Meals Taste Better Outdoors
+                Spread a blanket beneath the deodars, unpack a basket of simple comforts.
               </p>
             </div>
           </div>
