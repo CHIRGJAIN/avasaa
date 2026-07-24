@@ -5,7 +5,10 @@ import pineSlide2 from '../assets/pine_slide2.jpg';
 import pineSlide3 from '../assets/pine_slide3.jpg';
 import pineSlide4 from '../assets/pine_slide4.jpg';
 import room2Img from '../assets/room2.jpg';
+import room3Img from '../assets/room3.jpg';
 import cabinInterior from '../assets/cabin_interior.jpg';
+import thumb3 from '../assets/thumb3.jpg';
+import thumb4 from '../assets/thumb4.png';
 import { getRoomById } from '../data/rooms';
 
 function RoomDetail({ onBookRoom }) {
@@ -99,8 +102,10 @@ function RoomDetail({ onBookRoom }) {
     },
     'cedar-suite': {
       galleryImages: [
-        room2Img,
-        cabinInterior,
+        pineSlide1,
+        pineSlide2,
+        pineSlide3,
+        pineSlide4,
       ],
       aboutLong: 'Our most expansive offering, the Cedar Suite features 180-degree panoramic views of the Himalayan range. Designed for those who seek uncompromised space, the suite includes a dedicated lounge area and a spa-inspired copper bathtub. Floor-to-ceiling windows frame the ever-changing mountain landscape — from dawn mists to golden sunsets. The private deck is your personal vantage point for watching the world slow down beneath snow-capped peaks.',
       highlights: [
@@ -142,11 +147,10 @@ function RoomDetail({ onBookRoom }) {
     },
     'oak-studio': {
       galleryImages: [
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuC0qvBsifYopqnouXKhQ5nbi3ZRpZzPDsP58-StYZyAqbC0kFOFXBi2X0qfbl7huJBmxGwxNOnb5cR5mbttqJbID8DdjetiCBiP186rIRPH_SZZBbQ4ChywlZjJ3TEtGeU1ED6k2CaEIL9vc25pU6E7s6W2u8Wq2kqQXp0YD5ONiQ94bgjL-224VzsZ4QEhAcfSiSVmsJoh5_acaOJQwtCHgDaepwtyc-A_HQdFkinTnNnRcODk7dVl',
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuAK-48nzqziOQPo8BqWXWZCzrXt-DRDFu1S0WIa8AaJ4kSJI5vznPwYH6Tay6ZMSoKVQrPv51uFVrNJG8IzRdknyK6x_FglycDbIyRpGvHD3B5J-Jfp5kK14bRpJhKiwFWWFvc-_q70hZlSiIS3h-Y-yProyksoEyidefBqeIpYPnu5itUgPNylSA2Hv3MHmNLbvjhvIAlE8mWeG9FM0Rq4Jloqe-wTLtFXQtNRANb0-WOIViXX2bEW',
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuDiqrG6Zj_Vxx0q9ds2Q3OwBRNKbYlyJafapeLAuKME0JZCiQRkYCwjF9G2HXwYUCd85587o1l10Mj-HrCWWOtHw24cVQeZD4HakevVtf66EVs8wBjfferyAP2KyJQ3FRJjmS-MpFYJf6izDuKELXqOBLdMZi1ig6xE05TQiXbtuXG0ULEkLiGNa61oazrGLxpS4RPskLjTp_6DLHsbVRiTWH0VbbOPm-ZEx9b1MvC7I6MTqnGpd3wp',
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuCToewijSEL79Xo-GOkN2JkmPp6jJgPMaqRyV0DAzgjO0diDTmQhcoDVI_tAAkUs1flH56gx0kkPvYikt0swqtG7xC5covliw90Mmc2rUE2_62ds3Cd3_9tJcJYnv5EH5ilbGn-y7SpZKH3bdkk9Stp9gDE21b0EnTFCDNAelDZ5m3iKxeE40V2u1Fs0NGEf3tFyNnN_jH7LQxv3daIWQRviXjVll12Gw_fW6ZS4KEa9chf0LheQayN',
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuCSCkvIot5v7uygqLfZRjeUQRxZ1SVwSwUD-h-h0R2neRjrXP64djE_zeK0UlsFpSLsWebRwhwdrMBXMh8i4mIJCgm69gb1DajsxHeR7SgqYkZW4xmnQUnU1N6RhhaC8hDbHcujWIyA2h2qmmaEjcRms97n57Tn89hFKHy2Q3nzdPquiQ1ks8RQrxWwhYT743xUB8l9OuXJRaQcj7QUXyVMU4aovYix8K2ONRD7W8YKUsWfm1-iZXlq',
+        pineSlide1,
+        pineSlide2,
+        pineSlide3,
+        pineSlide4,
       ],
       aboutLong: 'Perfect for the solo explorer or a couple seeking intimacy, the Oak Studio is a masterclass in functional minimalism. Its compact layout maximizes light and views, providing a serene base for your mountain adventures. The reading nook is stocked with curated mountain literature, and the studio porch opens directly onto the garden — a living canvas that changes with the seasons from spring blossoms to winter snow.',
       highlights: [
