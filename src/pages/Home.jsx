@@ -16,7 +16,7 @@ import room2Img from '../assets/room2.jpg';
 import room3Img from '../assets/room3.jpg';
 import mountainPeakImg from '../assets/mountain_peak.png';
 
-function Home({ onBookRoom }) {
+function Home() {
   const slides = [
     {
       image: heroImg,
@@ -55,7 +55,7 @@ function Home({ onBookRoom }) {
       description: '2 Adults • Forest View',
       price: '₹18,000',
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0sgw4-SXq_qXpKloANjXlNkl_q5VFMDtF9bJPtuoLQPVB2sWocdu_w44u87THUY2ucSgdaaKOqxa-jqKEUsNMZaROwdERXOiJL4yu79PP4rufasEEw-h6Kv_MS4aE8diaqjFaNN7UjxtvzgVklzifP3Ukq4GJ6QJBAQAJrcnw2W1HCx3yt5gdit_4_GkPeIUZQVvJ-cfzmJOAQluNO457NvNnc_22xy6Um_p8JKJqkRtK6LKTBgzd',
-      icons: ['wifi', 'fireplace', 'local_cafe']
+      icons: ['wifi', 'whatshot', 'local_cafe']
     },
     {
       id: 'cedar-suite',
@@ -94,7 +94,8 @@ function Home({ onBookRoom }) {
                 }`}
             >
               <img
-                className="w-full h-full object-cover object-top transition-transform duration-[10s] ease-out scale-101"
+                className={`w-full h-full object-cover transition-transform duration-[10s] ease-out ${slide.scale || 'scale-101'}`}
+                style={{ objectPosition: slide.objectPosition || 'top' }}
                 alt={slide.subtitle}
                 src={slide.image}
               />
@@ -138,7 +139,7 @@ function Home({ onBookRoom }) {
                   <h3 className="font-sans text-xl font-bold text-gray-900 leading-tight">Where Will You Stay Next?</h3>
                   <p className="font-sans text-sm text-gray-500 mt-1">Choose your best options to discover the perfect sanctuary for your next journey.</p>
                 </div>
-                <div className="flex items-center gap-2 text-[#1f432d] font-sans text-xs font-semibold bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-100/50">
+                <div className="flex items-center gap-2 text-[#516C60] font-sans text-xs font-semibold bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-100/50">
                   <span className="material-symbols-outlined text-base text-emerald-600">verified_user</span>
                   <span>Hassle-Free Bookings</span>
                   <span className="material-symbols-outlined text-blue-500 text-xs font-fill-1 ml-0.5">verified</span>
@@ -339,7 +340,7 @@ function Home({ onBookRoom }) {
       </section>
 
       {/* Section 3: The Stay */}
-      <section className="bg-[#fcfbf9] py-24 px-6 relative">
+      <section className="bg-[#EFE6E1] py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 reveal">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary mb-4 block">
@@ -367,7 +368,7 @@ function Home({ onBookRoom }) {
                 rating: '4.9',
                 reviews: '128 reviews',
                 tags: ['Forest View', 'Fireplace'],
-                bullets: ['wifi', 'fireplace', 'parking', '24-hour service'],
+                bullets: ['wifi', 'whatshot', 'parking', '24-hour service'],
                 image: room1Img,
                 imagePosition: 'center 38%'
               },
@@ -421,7 +422,7 @@ function Home({ onBookRoom }) {
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-300"></div>
 
                   {/* Rating Scorecard Badge (Overlay Top Right) */}
-                  <div className="absolute top-3 right-3 bg-[#1f432d] text-white font-sans text-xs font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md backdrop-blur-md">
+                  <div className="absolute top-3 right-3 bg-[#516C60] text-white font-sans text-xs font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md backdrop-blur-md">
                     <span>{room.rating}</span>
                     <span className="w-1 h-1 rounded-full bg-white/55"></span>
                     <span className="text-[9px] font-medium tracking-wide uppercase">{room.type}</span>
@@ -496,7 +497,7 @@ function Home({ onBookRoom }) {
                   {/* View Rooms / Booking Button */}
                   <Link
                     to={`/room/${room.id}`}
-                    className="w-full mt-3 bg-[#1f432d] hover:bg-[#12281a] text-white py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md hover:scale-102 active:scale-98 transition-all"
+                    className="w-full mt-3 bg-[#516C60] hover:bg-[#3e5349] text-white py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md hover:scale-102 active:scale-98 transition-all"
                   >
                     <span>View Rooms</span>
                   </Link>
@@ -571,12 +572,12 @@ function Home({ onBookRoom }) {
             </div>
           </div>
 
-          {/* Card 3: Signature Bonfire Evenings */}
+          {/* Card 3: Bonfire Nights */}
           <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
             <img
               className="absolute inset-0 w-full h-full object-cover"
               style={{ transform: 'scaleX(-1)' }}
-              alt="Signature Bonfire Evenings"
+              alt="Bonfire Nights"
               src={bonfireImg}
             />
             {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
@@ -597,24 +598,28 @@ function Home({ onBookRoom }) {
 
         </div>
 
-        {/* Featured Wide Banner at Bottom */}
+        {/* Featured Wide Banner — Google Maps Location */}
         <div className="w-full reveal mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-[40px] bg-surface-container-low shadow-lg border border-outline-variant/30">
-            {/* Left side: Immersive photo */}
-            <div className="relative aspect-[4/3] md:aspect-auto h-80 md:h-[420px] overflow-hidden">
-              <img
-                className="w-full h-full object-cover scale-105 transition-transform duration-[10s] ease-out hover:scale-100"
-                src={cabinInterior}
-                alt="Cozy cabin interior view"
-              />
-              <div className="absolute inset-0 bg-black/10"></div>
+            {/* Left side: Google Map */}
+            <div className="relative h-80 md:h-[420px] overflow-hidden">
+              <iframe
+                title="Avasaa Café and Stay Location"
+                src="https://maps.google.com/maps?q=Avasaa%20Cafe%20and%20Stay%20Jibhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
 
-            {/* Right side: Gold colored experience card */}
-            <div className="bg-[#c2a25a] text-[#1f432d] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px]">
+            {/* Right side: Location info card */}
+            <div className="bg-[#c2a25a] text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px]">
               {/* Top-left decoration badge */}
               <div className="absolute top-8 left-8 opacity-25">
-                <span className="material-symbols-outlined text-4xl">filter_vintage</span>
+                <span className="material-symbols-outlined text-4xl">location_on</span>
               </div>
 
               {/* Background Pine Trees Silhouette */}
@@ -623,150 +628,31 @@ function Home({ onBookRoom }) {
               </div>
 
               {/* Card Typography */}
-              <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#1f432d]/70 mb-4 block">
-                A raw mountain experience in
+              <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
+                Find Us
               </span>
-              <h3 className="font-sans text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider leading-[0.95] text-[#1f432d] mb-2">
-                Jibhi's <br />Tirthan Valley
+              <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
+                Seri Village,<br />Jibhi
               </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Brand Typography Section — Decorated */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white via-[#f8f6f1] to-white">
-
-        {/* Subtle Background Pattern — Faint grid dots */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none" style={{ backgroundImage: 'radial-gradient(circle, #1f432d 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-
-        {/* Top & Bottom Gold Accent Lines */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-[#c2a25a]/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-[#c2a25a]/50 to-transparent"></div>
-
-        {/* Corner Ornament — Top Left */}
-        <div className="absolute top-6 left-6 md:top-10 md:left-10 opacity-15 pointer-events-none select-none">
-          <div className="w-16 h-16 border-t-2 border-l-2 border-[#c2a25a]/60 rounded-tl-lg"></div>
-        </div>
-        {/* Corner Ornament — Top Right */}
-        <div className="absolute top-6 right-6 md:top-10 md:right-10 opacity-15 pointer-events-none select-none">
-          <div className="w-16 h-16 border-t-2 border-r-2 border-[#c2a25a]/60 rounded-tr-lg"></div>
-        </div>
-        {/* Corner Ornament — Bottom Left */}
-        <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 opacity-15 pointer-events-none select-none">
-          <div className="w-16 h-16 border-b-2 border-l-2 border-[#c2a25a]/60 rounded-bl-lg"></div>
-        </div>
-        {/* Corner Ornament — Bottom Right */}
-        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 opacity-15 pointer-events-none select-none">
-          <div className="w-16 h-16 border-b-2 border-r-2 border-[#c2a25a]/60 rounded-br-lg"></div>
-        </div>
-
-        {/* Decorative Pine Silhouettes — Left */}
-        <div className="absolute left-[-20px] bottom-0 opacity-[0.04] pointer-events-none select-none">
-          <span className="material-symbols-outlined text-[200px] text-primary leading-none">park</span>
-        </div>
-        {/* Decorative Pine Silhouettes — Right */}
-        <div className="absolute right-[-20px] bottom-0 opacity-[0.04] pointer-events-none select-none">
-          <span className="material-symbols-outlined text-[200px] text-primary leading-none">forest</span>
-        </div>
-
-        {/* Left Vertical Stamp */}
-        <div className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 opacity-30 z-10">
-          <span className="font-sans text-[9px] font-bold uppercase tracking-widest text-primary [writing-mode:vertical-lr] rotate-180">ESTD. 2024</span>
-          <div className="h-10 w-[1px] bg-primary/40"></div>
-        </div>
-
-        {/* Right Vertical Stamp */}
-        <div className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 opacity-30 z-10">
-          <span className="font-sans text-[9px] font-bold uppercase tracking-widest text-primary [writing-mode:vertical-lr]">JIBHI • HP</span>
-          <div className="h-10 w-[1px] bg-primary/40"></div>
-        </div>
-
-        {/* Top Center Label */}
-        <div className="relative z-10 flex items-center justify-center gap-4 mb-8">
-          <div className="h-[1px] bg-[#c2a25a]/30 w-12 md:w-20"></div>
-          <span className="font-sans text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-[#c2a25a]">Our Identity</span>
-          <div className="h-[1px] bg-[#c2a25a]/30 w-12 md:w-20"></div>
-        </div>
-
-        {/* Image-Masked Branding Typography */}
-        <div className="relative z-10 flex justify-center items-center font-sans text-[15vw] md:text-[14vw] font-black tracking-[0.2em] md:tracking-[0.25em] text-center uppercase leading-none select-none max-w-[95vw] mx-auto">
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${thumb1})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</span>
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${thumb2})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>V</span>
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${thumb3})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</span>
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${thumb4})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>S</span>
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${snowyPines})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</span>
-          <span className="bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-108 inline-block cursor-default" style={{ backgroundImage: `url(${heroImg})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</span>
-        </div>
-
-        {/* Bottom Flanked Subtitle */}
-        <div className="relative z-10 flex items-center justify-center gap-4 mt-8">
-          <div className="h-[1px] bg-primary/20 w-12 md:w-20"></div>
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.35em] text-secondary">Himalayan Sanctuary</span>
-          <div className="h-[1px] bg-primary/20 w-12 md:w-20"></div>
-        </div>
-      </section>
-
-      {/* Section 8: Discover Jibhi */}
-      <section className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="reveal space-y-8">
-            <span className="font-sans text-xs font-semibold uppercase tracking-widest text-secondary block">
-              The Destination
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium">Discover Jibhi</h2>
-            <div className="space-y-12">
-              <div className="flex gap-6">
-                <span className="font-serif text-4xl text-surface-container-highest">01</span>
-                <div>
-                  <h4 className="font-serif text-xl text-primary mb-2">Jalori Pass</h4>
-                  <p className="text-on-surface-variant font-sans font-light leading-relaxed">
-                    A breathtaking mountain pass located at 10,800 ft. Perfect for a day trek with 360-degree views of the snowy peaks.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <span className="font-serif text-4xl text-surface-container-highest">02</span>
-                <div>
-                  <h4 className="font-serif text-xl text-primary mb-2">Serolsar Lake</h4>
-                  <p className="text-on-surface-variant font-sans font-light leading-relaxed">
-                    A hidden mystical lake deep in the forest. Its waters are said to be eternally clean, guarded by local mountain spirits.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <span className="font-serif text-4xl text-surface-container-highest">03</span>
-                <div>
-                  <h4 className="font-serif text-xl text-primary mb-2">Jibhi Waterfall</h4>
-                  <p className="text-on-surface-variant font-sans font-light leading-relaxed">
-                    A gentle cascading waterfall located just a short walk from the retreat. The perfect spot for a cold mountain dip.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative reveal flex justify-center">
-            <div className="w-[80%] aspect-square rounded-full overflow-hidden border border-outline-variant/60 p-4">
-              <img
-                className="w-full h-full object-cover rounded-full"
-                alt="Snow-capped mountain peaks"
-                src={mountainPeakImg}
-              />
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-secondary-container rounded-full flex items-center justify-center p-6 text-center animate-spin-slow">
-              <p className="font-sans text-[9px] font-semibold text-on-secondary-container tracking-widest leading-normal">
-                EXPLORE • HIMALAYAS • EXPLORE • HIMALAYAS
+              <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
+                Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
               </p>
+              <a
+                href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
+              >
+                <span className="material-symbols-outlined text-sm">directions</span>
+                Get Directions
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section 6: Gallery — Decorated & Colored */}
-      <section id="gallery" className="py-24 px-6 bg-[#FAF8F5] relative overflow-hidden">
+      <section id="gallery" className="py-24 px-6 bg-[#EFE6E1] relative overflow-hidden">
 
         {/* Subtle decorative background line */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>

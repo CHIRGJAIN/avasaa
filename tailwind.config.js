@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1f432d", // Forest Green
+        primary: "#516C60", // New Green
         secondary: "#765843", // Earth Brown
         tertiary: "#533700",
-        background: "#fbf9f5", // Warm Off White
-        surface: "#fbf9f5",
-        "surface-container": "#efeeea",
-        "surface-container-low": "#f5f3ef",
-        "surface-container-high": "#eae8e4",
-        "surface-container-highest": "#e4e2de",
+        background: "#EFE6E1", // Soft Beige
+        surface: "#EFE6E1",
+        "surface-container": "#e5dad4",
+        "surface-container-low": "#eae0db",
+        "surface-container-high": "#dfd3cc",
+        "surface-container-highest": "#d9ccc3",
         "on-surface": "#1b1c1a",
         "on-surface-variant": "#414842",
         "on-primary": "#ffffff",

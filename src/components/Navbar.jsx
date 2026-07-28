@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoImg from '../assets/logo.png';
 
-function Navbar({ onBookClick }) {
+function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -26,27 +26,25 @@ function Navbar({ onBookClick }) {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Stay', path: '/stay' },
-    { name: 'About', path: '/about' },
-    { name: 'Blog', path: '/blog' },
-    // { name: 'Experiences', path: '/#experiences', hash: true },
-    // { name: 'Gallery', path: '/#gallery', hash: true },
-    { name: 'Contact', path: '/#contact', hash: true },
+    { name: 'The Stay', path: '/stay' },
+    { name: 'Our Story', path: '/about' },
+    { name: 'Experiences', path: '/experiences' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
-  const pagesWithHero = ['/', '/about'];
-  const hasHero = pagesWithHero.includes(location.pathname) || location.pathname.startsWith('/room/');
+  const pagesWithHero = ['/', '/stay', '/contact', '/about'];
+  const hasHero = pagesWithHero.includes(location.pathname) || location.pathname.startsWith('/room/') || location.pathname.startsWith('/experience/');
   const activeScrolled = isScrolled || !hasHero;
 
   return (
-    <nav className="fixed w-full top-0 z-50 px-4 md:px-8 pt-4 transition-all duration-300">
-      <div
-        className={`max-w-7xl mx-auto w-full rounded-2xl md:rounded-full transition-all duration-300 flex justify-between items-center ${
-          activeScrolled
-            ? 'bg-white/30 backdrop-blur-lg shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] border border-white/20 py-2 md:py-3 px-6 md:px-10'
-            : 'bg-transparent shadow-none border border-transparent py-4 px-6 md:px-10'
-        }`}
-      >
+    <nav
+      className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+        activeScrolled
+          ? 'bg-[#EFE6E1]/90 backdrop-blur-lg border-b border-[#dfd3cc] shadow-[0_2px_12px_rgba(0,0,0,0.03)] py-3 px-6 md:px-12'
+          : 'bg-transparent py-5 px-6 md:px-12'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
@@ -97,17 +95,17 @@ function Navbar({ onBookClick }) {
 
         {/* CTA & Mobile Toggle */}
         <div className="flex items-center space-x-4">
-          <button
-            onClick={onBookClick}
+          <Link
+            to="/book"
             className={`px-5 py-2.5 rounded-xl font-sans text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all duration-300 shadow-sm scale-100 hover:scale-102 active:scale-98 ${
               activeScrolled
-                ? 'bg-primary hover:bg-[#12281a] text-white'
+                ? 'bg-primary hover:bg-[#3e5349] text-white'
                 : 'bg-white hover:bg-[#f5f2eb] text-primary'
             }`}
           >
             <span>Book Now</span>
             <span className="material-symbols-outlined text-sm font-bold">arrow_forward</span>
-          </button>
+          </Link>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

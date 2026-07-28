@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getRooms } from '../data/rooms';
+import stayHero from '../assets/stay_hero.jpg';
+import bonfireIllustration from '../assets/bonfire_illustration.png';
+import chefIllustration from '../assets/chef_illustration.png';
+import trailIllustration from '../assets/trail_illustration.png';
 
-function Stay({ onBookRoom }) {
+function Stay() {
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,10 +25,10 @@ function Stay({ onBookRoom }) {
   return (
     <div>
       {/* Hero Header */}
-      <header className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+      <header className="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-cover bg-center scale-105" 
-            style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVU3Evafa6HQxh-v_Q2Wrm1BWGWMLyCQeTC3aY1pAXF7KQx4aGrDmOOpoLpzKx-sBQefcJfy6bP8Cz7jweCkYo9rbeWXMhy8zDq19LEyEZNHAp8CVfdVWV_AuQ6OhJ5KWLOPv0YCVfUNwQR0GkvhdTvrqPL8xMXhFIS3Yhb4_mpITiVlVkPAYhoBAMebiWtkZzYBwTYfrD3Q91hkeG5iFPqQHZwzFLKANelG4ceImF12sqRtWfEc3b')" }}
+            style={{ backgroundImage: `url(${stayHero})` }}
           ></div>
           <div className="absolute inset-0 bg-black/35"></div>
         </div>
@@ -106,12 +111,12 @@ function Stay({ onBookRoom }) {
                     </div>
 
                     <div className="flex gap-4 pt-2">
-                      <button 
-                        onClick={() => onBookRoom(room.id)}
-                        className="bg-primary text-on-primary px-8 py-3 rounded-2xl font-sans text-xs font-semibold uppercase tracking-widest hover:bg-[#4C6548] transition-colors shadow-md scale-100 hover:scale-105 active:scale-95 duration-200"
+                      <Link 
+                        to={`/book?roomId=${room.id}`}
+                        className="bg-primary text-on-primary px-8 py-3 rounded-2xl font-sans text-xs font-semibold uppercase tracking-widest hover:bg-[#3e5349] transition-colors shadow-md scale-100 hover:scale-105 active:scale-95 duration-200"
                       >
                         Book This Room
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </section>
@@ -133,21 +138,21 @@ function Stay({ onBookRoom }) {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 text-left">
             <div className="p-8 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/40 shadow-sm hover:shadow-md transition-shadow">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">local_fire_department</span>
+              <img src={bonfireIllustration} alt="Bonfire Circle" className="h-16 w-auto mb-4 object-contain mix-blend-multiply" />
               <h4 className="font-serif text-lg text-primary mb-2">Bonfire Circle</h4>
               <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed">
                 Gather nightly under the stars for local folk tales and artisanal warm drinks.
               </p>
             </div>
             <div className="p-8 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/40 shadow-sm hover:shadow-md transition-shadow">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">restaurant</span>
+              <img src={chefIllustration} alt="Farm-to-Table" className="h-16 w-auto mb-4 object-contain mix-blend-multiply" />
               <h4 className="font-serif text-lg text-primary mb-2">Farm-to-Table</h4>
               <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed">
                 Taste Himachali home-cooked dishes sourced from local farms and organic soils.
               </p>
             </div>
             <div className="p-8 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/40 shadow-sm hover:shadow-md transition-shadow">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">tour</span>
+              <img src={trailIllustration} alt="Private Trails" className="h-16 w-auto mb-4 object-contain" />
               <h4 className="font-serif text-lg text-primary mb-2">Private Trails</h4>
               <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed">
                 Embark on self-guided morning hikes through dense pine forests bordering our estate.

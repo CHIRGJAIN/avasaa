@@ -74,11 +74,6 @@ function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-tertiary-fixed transition-colors">
-                Careers
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-tertiary-fixed transition-colors">
                 Privacy Policy
               </a>
             </li>

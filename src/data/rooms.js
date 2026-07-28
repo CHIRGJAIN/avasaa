@@ -12,7 +12,7 @@ export const roomsData = [
     priceInr: 18000,
     description: "Tucked away in a private corner of the property, the Pine Chalet is a celebration of raw organic textures. With its private balcony and hand-selected wood paneling, it offers an immersive experience into the surrounding forest.",
     amenities: ["Fiber Wi-Fi", "Stone Fireplace", "Private Balcony", "Organic Linens"],
-    icons: ["wifi", "fireplace", "balcony", "eco"],
+    icons: ["wifi", "whatshot", "balcony", "eco"],
     image: room1Img
   },
   {

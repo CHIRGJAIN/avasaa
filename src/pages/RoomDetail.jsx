@@ -11,7 +11,7 @@ import thumb3 from '../assets/thumb3.jpg';
 import thumb4 from '../assets/thumb4.png';
 import { getRoomById } from '../data/rooms';
 
-function RoomDetail({ onBookRoom }) {
+function RoomDetail() {
   const { roomId } = useParams();
   const [room, setRoom] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -65,7 +65,7 @@ function RoomDetail({ onBookRoom }) {
       aboutLong: 'Tucked away in a private corner of the property, the Pine Chalet is a celebration of raw organic textures. With its private balcony and hand-selected wood paneling, it offers an immersive experience into the surrounding forest. Every element — from the hand-selected wood paneling to the stone fireplace — is chosen to immerse you in the surrounding nature. Wake up to birdsong filtering through your private balcony, and end the day by the crackling fire under a blanket of stars.',
       highlights: [
         { icon: 'wifi', text: 'Free Wi-Fi' },
-        { icon: 'fireplace', text: 'Stone Fireplace' },
+        { icon: 'whatshot', text: 'Stone Fireplace' },
         { icon: 'balcony', text: 'Private Balcony' },
         { icon: 'restaurant', text: 'Breakfast Included' },
         { icon: 'local_fire_department', text: 'Bonfire Access' },
@@ -584,13 +584,13 @@ function RoomDetail({ onBookRoom }) {
                   )}
 
                   {/* Book Now CTA */}
-                  <button
-                    onClick={() => onBookRoom(room.id, checkIn, checkOut, guests)}
-                    className="w-full bg-primary text-white py-4 rounded-xl font-sans text-sm font-bold uppercase tracking-wider hover:bg-[#4C6548] transition-all flex items-center justify-center gap-2 shadow-md"
+                  <Link
+                    to={`/book?roomId=${room.id}&checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests}`}
+                    className="w-full bg-primary text-white py-4 rounded-xl font-sans text-sm font-bold uppercase tracking-wider hover:bg-[#3e5349] transition-all flex items-center justify-center gap-2 shadow-md"
                   >
                     Book Now
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
 
