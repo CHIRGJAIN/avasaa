@@ -15,25 +15,26 @@ import room1Img from '../assets/room1.jpg';
 import room2Img from '../assets/room2.jpg';
 import room3Img from '../assets/room3.jpg';
 import mountainPeakImg from '../assets/mountain_peak.png';
+import stayHero from '../assets/stay_hero.jpg';
 
 function Home() {
   const slides = [
     {
       image: heroImg,
       subtitle: "SERI VILLAGE • JIBHI",
-      title: <>Come Home. <span className="italic font-light">To The Mountains..</span></>,
+      title: <>Come Home. <br/><span className="italic font-light">To The Mountains..</span></>,
       description: "Some places are visited. Others are felt. Nestled in the quiet village of Seri, Avasaa invites you to pause, reconnect, and experience the mountains at their own pace."
     },
     {
       image: heroBalcony,
       subtitle: "UNINTERRUPTED VIEWS",
-      title: <>A Balcony Above <span className="italic font-light">The Whispering Clouds.</span></>,
+      title: <>A Balcony Above <br /><span className="italic font-light">The Whispering Clouds.</span></>,
       description: "Watch the clouds roll through the valley from your balcony, sip your morning coffee in silence, and let the mountains remind you how peaceful life can feel."
     },
     {
       image: heroWinter,
       subtitle: "A TABLE WITH A VIEW",
-      title: <>More Than A Café. <span className="italic font-light">It's Where Days Slow Down.</span></>,
+      title: <>More Than A Café. <br /><span className="italic font-light">It's Where Days Slow Down.</span></>,
       description: "The laughter around the table, the warmth of a fresh meal, the view beyond the window. These are the moments people carry home from Avasaa."
     }
   ];
@@ -132,22 +133,10 @@ function Home() {
 
           {/* Desktop Search Bar - Placed back in Hero Section */}
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 z-30 hidden md:block">
-            <div className="bg-white rounded-[32px] shadow-2xl border border-black/5 p-8 relative">
-              {/* Top Row */}
-              <div className="flex justify-between items-center pb-5 border-b border-gray-100 mb-5">
-                <div>
-                  <h3 className="font-sans text-xl font-bold text-gray-900 leading-tight">Where Will You Stay Next?</h3>
-                  <p className="font-sans text-sm text-gray-500 mt-1">Choose your best options to discover the perfect sanctuary for your next journey.</p>
-                </div>
-                <div className="flex items-center gap-2 text-[#516C60] font-sans text-xs font-semibold bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-100/50">
-                  <span className="material-symbols-outlined text-base text-emerald-600">verified_user</span>
-                  <span>Hassle-Free Bookings</span>
-                  <span className="material-symbols-outlined text-blue-500 text-xs font-fill-1 ml-0.5">verified</span>
-                </div>
-              </div>
+            <div className="bg-white rounded-[32px] shadow-2xl border border-black/5 p-6 relative">
 
               {/* Bottom Row - Form Grid */}
-              <div className="grid grid-cols-3 gap-6 items-center">
+              <div className="grid grid-cols-4 gap-6 items-center">
                 {/* 1. Check-in */}
                 <div className="flex items-center gap-4 pr-6 border-r border-gray-100">
                   <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-600 border border-gray-100">
@@ -158,7 +147,6 @@ function Home() {
                     <input
                       type="date"
                       className="block w-full font-sans text-base font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0 cursor-pointer"
-                      defaultValue={new Date().toISOString().split('T')[0]}
                     />
                   </div>
                 </div>
@@ -173,13 +161,12 @@ function Home() {
                     <input
                       type="date"
                       className="block w-full font-sans text-base font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0 cursor-pointer"
-                      defaultValue={new Date(Date.now() + 86400000).toISOString().split('T')[0]}
                     />
                   </div>
                 </div>
 
                 {/* 3. Guests */}
-                <div className="flex items-center gap-4 pl-4">
+                <div className="flex items-center gap-4 px-4 pr-6 border-r border-gray-100">
                   <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-600 border border-gray-100">
                     <span className="material-symbols-outlined text-2xl">group</span>
                   </div>
@@ -193,14 +180,17 @@ function Home() {
                     </select>
                   </div>
                 </div>
-              </div>
 
-              {/* Floating Search Button */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                <Link to="/stay" className="bg-[#1e75eb] hover:bg-[#155fc0] text-white px-10 py-4 rounded-2xl font-sans text-sm font-bold uppercase tracking-widest flex items-center gap-2 shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95 whitespace-nowrap">
-                  <span className="material-symbols-outlined text-base font-bold">search</span>
-                  <span>Search Rooms</span>
-                </Link>
+                {/* 4. Search Button (Shifted Inside Searchbar) */}
+                <div className="flex items-center justify-center pl-4">
+                  <Link 
+                    to="/stay" 
+                    className="w-full bg-[#1e75eb] hover:bg-[#155fc0] text-white py-4 rounded-2xl font-sans text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all duration-200 transform hover:scale-102 active:scale-98 whitespace-nowrap"
+                  >
+                    <span className="material-symbols-outlined text-base font-bold">search</span>
+                    <span>Search Rooms</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -221,21 +211,20 @@ function Home() {
         {/* Mobile Search Bar - Displayed right below the hero image slider on mobile screens */}
         <div className="px-6 mt-[-32px] relative z-30 block md:hidden">
           <div className="bg-white rounded-[24px] shadow-xl border border-black/5 p-6">
-            <h3 className="font-sans text-base font-bold text-gray-900 mb-4">Where Will You Stay Next?</h3>
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
                   <span className="material-symbols-outlined text-gray-500 text-lg">calendar_today</span>
                   <div className="flex-grow">
                     <span className="block font-sans text-[8px] font-semibold text-gray-400 uppercase tracking-wider">Check-in</span>
-                    <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" defaultValue={new Date().toISOString().split('T')[0]} />
+                    <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" />
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
                   <span className="material-symbols-outlined text-gray-500 text-lg">calendar_month</span>
                   <div className="flex-grow">
                     <span className="block font-sans text-[8px] font-semibold text-gray-400 uppercase tracking-wider">Check-out</span>
-                    <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" defaultValue={new Date(Date.now() + 86400000).toISOString().split('T')[0]} />
+                    <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" />
                   </div>
                 </div>
               </div>
@@ -262,341 +251,146 @@ function Home() {
       </section>
 
       {/* Section 2: Redefining Experiential Luxury */}
-      <section id="about" className="py-28 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-          {/* Left Column: Overlapping Asymmetric Images */}
-          <div className="lg:col-span-6 reveal relative h-[480px] md:h-[580px]">
-            {/* Main Snowy Pines Image */}
-            <div className="absolute top-0 left-0 w-[82%] h-[82%] rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/20 group bg-stone-100">
-              <img
-                className="w-full h-full object-cover object-top transition-transform duration-[10s] ease-out group-hover:scale-102"
-                alt="Snowy pine forest hillside in the Himalayas"
-                src={snowyPines}
-              />
-              <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500"></div>
-            </div>
-
-            {/* Overlapping Detail Image (Cabin Interior with Pillows) */}
-            <div className="absolute bottom-0 right-0 w-[45%] h-[48%] rounded-2xl overflow-hidden shadow-2xl border-4 border-background z-10 group">
-              <img
-                className="w-full h-full object-cover transition-transform duration-[8s] ease-out group-hover:scale-105"
-                alt="Detailed wood craftsmanship and cozy seating"
-                src={thumb2}
-              />
-            </div>
-
+      <section id="about" className="py-24 px-6 md:py-28 bg-gradient-to-br from-[#516C60] to-[#34463e] text-white">
+        <div className="max-w-3xl mx-auto reveal space-y-8">
+          <div className="space-y-4">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
+              OUR PHILOSOPHY
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl text-white font-medium leading-tight">
+              A refuge carved carefully for <span className="italic font-light text-[#cca85a]">silent minds.</span>
+            </h2>
+            <h3 className="font-serif text-xl text-white/80 font-light">Welcome to Avasaa Stays</h3>
           </div>
 
-          {/* Right Column: Editorial Text & Philosophy Pillars */}
-          <div className="lg:col-span-6 reveal space-y-8">
-            <div className="space-y-3">
-              <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary block">
-                OUR PHILOSOPHY
-              </span>
-              <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
-                Welcome to <span className="italic">Avasaa Stays</span>
-              </h2>
-            </div>
+          {/* High-end introduction statement */}
+          <blockquote className="border-l border-white/20 pl-6 py-1 italic font-serif text-lg md:text-xl text-white/80 font-light leading-relaxed">
+            We believe true luxury is having the time to watch the clouds drift by, share an unhurried meal, and wake up with nowhere else you'd rather be.
+          </blockquote>
 
-            {/* High-end introduction statement */}
-            <p className="font-serif text-lg md:text-xl text-primary italic leading-relaxed font-light border-l-2 border-secondary/40 pl-6">
-              We believe true luxury is having the time to watch the clouds drift by, share an unhurried meal, and wake up with nowhere else you'd rather be.
+          <div className="space-y-6 font-sans text-sm md:text-base text-white/70 font-light leading-relaxed">
+            <p>
+              Some places are made for ticking off destinations.<br />
+              <span className="font-semibold text-white">Avasaa is made for slowing down.</span>
             </p>
-
-            <div className="space-y-4 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
-              <p>
-                Some places are made for ticking off destinations.<br />
-                <span className="font-semibold text-primary">Avasaa is made for slowing down.</span>
-              </p>
-              <p>
-                Located in the quiet village of Seri, Jibhi, Avasaa offers a different pace of travel. Mornings begin with birdsong instead of traffic. Evenings end under star-filled skies. The days in between are yours to spend however you like.
-              </p>
-              <p className="italic">
-                Read a book on the balcony.<br />
-                Work with the mountains as your backdrop.<br />
-                Go chasing waterfalls or do absolutely nothing.
-              </p>
-            </div>
-
-            <div className="pt-6 border-t border-outline-variant/30 flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <p className="font-serif text-xl italic text-secondary font-light"></p>
-                <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-sans"></span>
-              </div>
-              <Link
-                to="/about"
-                className="inline-flex items-center font-sans text-xs font-semibold uppercase tracking-widest text-primary group border-b-2 border-primary/20 pb-1 hover:border-primary transition-all duration-300"
-              >
-                HERE'S HOW IT ALL STARTED
-                <span className="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-2">
-                  arrow_right_alt
-                </span>
-              </Link>
+            <p>
+              Located in the quiet village of Seri, Jibhi, Avasaa offers a different pace of travel. Mornings begin with birdsong instead of traffic. Evenings end under star-filled skies. The days in between are yours to spend however you like.
+            </p>
+            <div className="space-y-1 font-serif italic text-base text-white/70 pl-60">
+              <p>Read a book on the balcony.</p>
+              <p>Work with the mountains as your backdrop.</p>
+              <p>Go chasing waterfalls or do absolutely nothing.</p>
             </div>
           </div>
 
+          <div className="pt-8 flex justify-end">
+            <Link
+              to="/about"
+              className="inline-flex items-center font-sans text-xs font-semibold uppercase tracking-widest text-[#cca85a] hover:text-[#e4c483] group border-b border-[#cca85a]/30 pb-1.5 hover:border-[#cca85a] transition-all duration-300"
+            >
+              <span>HERE'S HOW IT ALL STARTED</span>
+              <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Section 3: The Stay */}
-      <section className="bg-[#EFE6E1] py-24 px-6 relative">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 reveal">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary mb-4 block">
-              CRAFTED FOR COMFORT
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium">
-              The Stay
-            </h2>
-            <div className="h-[1px] bg-gradient-to-r from-transparent via-[#c2a25a]/30 to-transparent w-32 mx-auto mt-4"></div>
-          </div>
-
-          {/* Vertical Cards 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                id: 'pine-chalet',
-                name: 'Pine Chalet',
-                type: 'Mountain Refuge',
-                description: '2 Adults • Forest View',
-                price: '₹ 18,000',
-                originalPrice: '₹ 24,000',
-                discount: '- ₹ 6,000',
-                taxes: '+ ₹ 1,200 taxes & fees / night',
-                stars: 5,
-                rating: '4.9',
-                reviews: '128 reviews',
-                tags: ['Forest View', 'Fireplace'],
-                bullets: ['wifi', 'whatshot', 'parking', '24-hour service'],
-                image: room1Img,
-                imagePosition: 'center 38%'
-              },
-              {
-                id: 'cedar-suite',
-                name: 'Cedar Suite',
-                type: 'Elevated Luxury',
-                description: '4 Guests • River Facing',
-                price: '₹ 24,500',
-                originalPrice: '₹ 31,000',
-                discount: '- ₹ 6,500',
-                taxes: '+ ₹ 1,800 taxes & fees / night',
-                stars: 5,
-                rating: '4.8',
-                reviews: '94 reviews',
-                tags: ['River Facing', 'Balcony'],
-                bullets: ['wifi', 'balcony', 'ac_unit', 'minibar'],
-                image: room2Img
-              },
-              {
-                id: 'oak-studio',
-                name: 'Oak Studio',
-                type: 'Intimate Escape',
-                description: '2 Guests • Garden View',
-                price: '₹ 15,000',
-                originalPrice: '₹ 20,000',
-                discount: '- ₹ 5,000',
-                taxes: '+ ₹ 950 taxes & fees / night',
-                stars: 4,
-                rating: '4.7',
-                reviews: '56 reviews',
-                tags: ['Garden View', 'Eco Friendly'],
-                bullets: ['wifi', 'kitchenette', 'parking', 'breakfast'],
-                image: room3Img,
-                imagePosition: 'center 45%'
-              }
-            ].map((room) => (
-              <div
-                key={room.id}
-                className="bg-white rounded-3xl border border-black/5 shadow-md overflow-hidden reveal hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full"
+      {/* Section 3: Accommodation Banner */}
+      <section className="w-full relative h-[45vh] md:h-[60vh] overflow-hidden group">
+        <Link to="/stay" className="block w-full h-full relative cursor-pointer">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
+            style={{ backgroundImage: `url(${stayHero})` }}
+          />
+          {/* Subtle Dark Vignette Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/45 to-transparent transition-all duration-300" />
+          
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex items-center px-8 md:px-20 max-w-7xl mx-auto">
+            <div className="flex items-center gap-6 reveal">
+              {/* Vertical BOOK tag */}
+              <div 
+                className="font-sans text-[10px] md:text-xs tracking-[0.4em] font-semibold text-[#cca85a] uppercase border-r border-[#cca85a]/30 pr-4 py-2 select-none"
+                style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
               >
-                {/* 1. Image Section (Top) */}
-                <div className="relative aspect-[16/10] overflow-hidden group">
-                  <img
-                    className={`w-full h-full transition-transform duration-700 group-hover:scale-103 ${room.containImage ? 'object-contain bg-stone-100/60' : 'object-cover'
-                      }`}
-                    alt={room.name}
-                    src={room.image}
-                    style={{ objectPosition: room.imagePosition || 'center' }}
-                  />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-300"></div>
-
-                  {/* Rating Scorecard Badge (Overlay Top Right) */}
-                  <div className="absolute top-3 right-3 bg-[#516C60] text-white font-sans text-xs font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md backdrop-blur-md">
-                    <span>{room.rating}</span>
-                    <span className="w-1 h-1 rounded-full bg-white/55"></span>
-                    <span className="text-[9px] font-medium tracking-wide uppercase">{room.type}</span>
-                  </div>
-                </div>
-
-                {/* 2. Room Content Info Section (Middle) */}
-                <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1 h-3.5 bg-primary rounded-full"></span>
-                      <h3 className="font-serif text-lg font-semibold text-primary">{room.name}</h3>
-                    </div>
-
-                    {/* Star Rating Indicator */}
-                    <div className="flex text-[#cca85a]">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className={`material-symbols-outlined text-xs ${i < room.stars ? 'font-fill-1' : ''}`}>star</span>
-                      ))}
-                    </div>
-
-                    {/* Breadcrumb Destination */}
-                    <p className="font-sans text-[9px] font-semibold text-[#1e75eb] uppercase tracking-wider">
-                      Jibhi &gt; Tirthan Valley
-                    </p>
-
-                    {/* Tags Badges */}
-                    <div className="flex flex-wrap gap-1 pt-0.5">
-                      {room.tags.map((tag, idx) => (
-                        <span key={idx} className="bg-gray-100/80 text-gray-600 px-2 py-0.5 rounded-md font-sans text-[8px] font-bold uppercase tracking-wider border border-black/5">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bullet Amenities Row */}
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10px] text-on-surface-variant font-light pt-2.5 border-t border-outline-variant/30">
-                    {room.bullets.map((bullet, idx) => (
-                      <span key={idx} className="flex items-center gap-1">
-                        {idx > 0 && <span className="text-gray-300">•</span>}
-                        <span className="capitalize">{bullet}</span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 3. Pricing & Booking Column (Bottom) */}
-                <div className="p-5 pt-0 flex flex-col justify-between items-stretch">
-
-                  {/* Pricing and Tax details */}
-                  <div className="text-left border-t border-outline-variant/30 pt-3 space-y-0.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className="bg-[#d32f2f] text-white px-1.5 py-0.5 rounded font-sans text-[8px] font-bold">
-                        {room.discount}
-                      </span>
-                      <span className="font-sans text-xs text-gray-400 line-through">
-                        {room.originalPrice}
-                      </span>
-                    </div>
-                    <div className="flex items-baseline justify-between">
-                      <p className="font-serif text-xl font-bold text-primary leading-none">
-                        {room.price}
-                      </p>
-                      <span className="text-[9px] text-on-surface-variant font-light">/ night</span>
-                    </div>
-                    <p className="text-[8px] text-on-surface-variant font-light">
-                      {room.taxes}
-                    </p>
-                  </div>
-
-                  {/* View Rooms / Booking Button */}
-                  <Link
-                    to={`/room/${room.id}`}
-                    className="w-full mt-3 bg-[#516C60] hover:bg-[#3e5349] text-white py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md hover:scale-102 active:scale-98 transition-all"
-                  >
-                    <span>View Rooms</span>
-                  </Link>
-                </div>
+                BOOK
               </div>
-            ))}
+              {/* Heading and details */}
+              <div className="space-y-1 md:space-y-2">
+                <h2 className="font-serif text-4xl md:text-6xl text-white font-light tracking-wide leading-none">
+                  Accommodation
+                </h2>
+                <p className="font-serif text-lg md:text-2xl text-white/90 italic font-light flex items-center">
+                  at Stone House <span className="font-sans not-italic text-lg md:text-2xl ml-2 tracking-tighter text-white/90">»</span>
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </Link>
       </section>
 
       {/* Section 4: Experiences */}
-      <section id="experiences" className="py-24 px-6 max-w-7xl mx-auto">
-        {/* Centered Editorial Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary block">
-            Immerse Yourself
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
-            Curated Experiences
-          </h2>
-          <p className="font-sans text-base text-on-surface-variant font-light leading-relaxed">
-            Designed around the rhythm of the mountains, our experiences are simple, authentic, and deeply rooted in the place we call home.
-          </p>
-        </div>
-
-        {/* 3-Column Image-Driven Experiences Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-
-          {/* Card 1: Village Walks */}
-          <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
-            <img
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] ease-out group-hover:scale-108"
-              alt="Village Walks"
-              src={forestWalkImg}
-            />
-            {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent z-10"></div>
-
-            {/* Card Content */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
-              <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">01</span>
-              <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                Village Walks
-              </h3>
-              <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Walk Through Mountain Life
-                Take a leisurely stroll through the quiet lanes of Seri, where every corner tells a story.
-              </p>
-            </div>
+      <section id="experiences" className="py-28 px-6 max-w-7xl mx-auto">
+        <div className="w-full">
+          {/* Centered Editorial Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary block">
+              Immerse Yourself
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
+              Curated Experiences
+            </h2>
+            <p className="font-sans text-base text-on-surface-variant font-light leading-relaxed">
+              Designed around the rhythm of the mountains, our experiences are simple, authentic, and deeply rooted in the place we call home.
+            </p>
           </div>
 
-          {/* Card 2: HIDDEN TRAILSs */}
-          <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
-            <img
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] ease-out group-hover:scale-108"
-              alt="HIDDEN TRAILSs"
-              src={thumb4}
-            />
-            {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent z-10"></div>
-
-            {/* Card Content */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
-              <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">02</span>
-              <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                HIDDEN TRAILS
-              </h3>
-              <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Take the Path Less Travelled
-                Leave the crowds behind and wander along peaceful forest trails.
-              </p>
-            </div>
+          {/* 6-Column Text-Only Experiences Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full mt-20">
+            {[
+              {
+                title: "Wood-Fired Sauna",
+                description: "Sweat under the stars. Then plunge into mountain-cold water. Repeat until you've forgotten your inbox exists."
+              },
+              {
+                title: "Slow-Cooked Meals",
+                description: "Everything from scratch. Local ingredients, open fire, eaten slowly. The food here doesn't compete with the view — it joins it."
+              },
+              {
+                title: "Forest & Orchard",
+                description: "Ancient cedars. Apple orchards. Trails that lead to waterfalls or nowhere in particular. Both are fine."
+              },
+              {
+                title: "Wildlife Safari",
+                description: "Kais Wildlife Sanctuary. Himalayan birds. The kind of animals you only see when you've stopped rushing."
+              },
+              {
+                title: "Riverside Bonfire",
+                description: "Listen to the river hum while the logs crackle. Evenings at Avasaa end exactly how they should—under a canopy of stars with warmth at your feet."
+              },
+              {
+                title: "Balcony Mornings",
+                description: "A cup of local tea, the valley wrapped in mist, and the sun rising over the snow-capped peaks. No alarms, no schedules."
+              }
+            ].map((exp, idx) => (
+              <div
+                key={idx}
+                className={`px-8 md:px-12 py-10 md:py-12 text-center space-y-4 reveal border-b border-primary/10 md:border-b-0 ${
+                  idx % 3 !== 2 ? 'md:border-r border-primary/10' : ''
+                } ${
+                  idx >= 3 ? 'md:border-t border-primary/10' : ''
+                } last:border-b-0`}
+              >
+                <h3 className="font-serif text-2xl md:text-3xl text-secondary font-semibold leading-tight tracking-wide">
+                  {exp.title}
+                </h3>
+                <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed max-w-xs mx-auto">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
           </div>
-
-          {/* Card 3: Bonfire Nights */}
-          <div className="group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-outline-variant/30 reveal">
-            <img
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ transform: 'scaleX(-1)' }}
-              alt="Bonfire Nights"
-              src={bonfireImg}
-            />
-            {/* Elegant Gradient Overlay — Thinned to remove black shadow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent z-10"></div>
-
-            {/* Card Content */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20 text-white">
-              <span className="font-serif text-3xl italic text-[#cca85a]/90 mb-2 font-light block">03</span>
-              <h3 className="font-sans text-xl font-bold uppercase tracking-wider text-white mb-2">
-                Forest Picnic
-              </h3>
-              <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                Meals Taste Better Outdoors
-                Spread a blanket beneath the deodars, unpack a basket of simple comforts.
-              </p>
-            </div>
-          </div>
-
-        </div>
 
         {/* Featured Wide Banner — Google Maps Location */}
         <div className="w-full reveal mt-12">
@@ -649,7 +443,8 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Section 6: Gallery — Decorated & Colored */}
       <section id="gallery" className="py-24 px-6 bg-[#EFE6E1] relative overflow-hidden">
