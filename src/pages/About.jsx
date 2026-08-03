@@ -9,10 +9,10 @@ function About() {
   }, []);
 
   return (
-    <div className="bg-[#FAF8F5] min-h-screen pb-24">
-      
+    <div className="bg-[#FAF8F5] min-h-screen pb-12">
+
       {/* Hero Header with image */}
-      <div className="relative w-full h-[65vh] md:h-[75vh] overflow-hidden bg-stone-900 flex items-center justify-center mb-16 md:mb-24">
+      <div className="relative w-full h-[65vh] md:h-[75vh] overflow-hidden bg-stone-900 flex items-center justify-center mb-10 md:mb-12">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImg}
@@ -20,34 +20,22 @@ function About() {
             className="w-full h-full object-cover opacity-60 scale-102"
           />
         </div>
-        <div className="relative z-10 text-center space-y-3 px-6">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-white/80 block">
-            Our Story
-          </span>
-          <h1 className="font-serif text-4xl md:text-6xl text-white font-bold leading-tight drop-shadow-md">
-            About Us
-          </h1>
-          <p className="font-sans text-sm md:text-base text-white/90 font-light leading-relaxed max-w-xl mx-auto drop-shadow-sm">
-            Your boutique sanctuary for slow living & mountain luxury. Learn about our philosophy and heritage.
-          </p>
-        </div>
       </div>
 
       {/* Main Narrative Block & Grid */}
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-20">
-        
+      <div className="max-w-4xl mx-auto px-6 py-6 space-y-16">
+
         {/* Section 1: Our Story */}
-        <div className="space-y-8 reveal">
-          <div className="space-y-3">
+        <div className="space-y-5 reveal">
+          <div className="space-y-2">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
-              OUR STORY
-            </span>
+              Here's how it all started            </span>
             <h2 className="font-serif text-3xl md:text-4xl text-primary italic font-light leading-tight">
               Avasaa means home.
             </h2>
           </div>
-          
-          <div className="space-y-6 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
+
+          <div className="space-y-4 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
             <p>
               Not just a place to stay, but a place where you can slow down, breathe a little deeper, and let go of the need to be somewhere else.
             </p>
@@ -76,8 +64,8 @@ function About() {
         <div className="h-[1px] bg-gradient-to-r from-transparent via-[#dfd3cc] to-transparent w-full"></div>
 
         {/* Section 2: Founder's Note */}
-        <div className="space-y-8 reveal">
-          <div className="space-y-3">
+        <div className="space-y-5 reveal">
+          <div className="space-y-2">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
               FOUNDER'S NOTE
             </span>
@@ -85,8 +73,8 @@ function About() {
               From Our Hearts to Yours
             </h2>
           </div>
-          
-          <div className="space-y-6 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
+
+          <div className="space-y-4 font-sans text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
             <p>
               We've spent years travelling, staying in different places, collecting stories from around the world. Along the way, we realised that the things we remembered most weren't the grandest ones. They were the ones that made us feel welcome. The ones that felt honest, personal, and real.
             </p>

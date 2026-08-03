@@ -22,7 +22,7 @@ function Home() {
     {
       image: heroImg,
       subtitle: "SERI VILLAGE • JIBHI",
-      title: <>Come Home. <br/><span className="italic font-light">To The Mountains..</span></>,
+      title: <>Come Home. <br /><span className="italic font-light">To The Mountains..</span></>,
       description: "Some places are visited. Others are felt. Nestled in the quiet village of Seri, Avasaa invites you to pause, reconnect, and experience the mountains at their own pace."
     },
     {
@@ -51,7 +51,7 @@ function Home() {
   const roomSummaries = [
     {
       id: 'pine-chalet',
-      name: 'Pine Chalet',
+      name: 'Anandaa',
       type: 'Mountain Refuge',
       description: '2 Adults • Forest View',
       price: '₹18,000',
@@ -133,58 +133,58 @@ function Home() {
 
           {/* Desktop Search Bar - Placed back in Hero Section */}
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 z-30 hidden md:block">
-            <div className="bg-white rounded-[32px] shadow-2xl border border-black/5 p-6 relative">
+            <div className="bg-white/10 backdrop-blur-md rounded-[32px] shadow-2xl border border-white/20 p-6 relative">
 
               {/* Bottom Row - Form Grid */}
               <div className="grid grid-cols-4 gap-6 items-center">
                 {/* 1. Check-in */}
-                <div className="flex items-center gap-4 pr-6 border-r border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-600 border border-gray-100">
+                <div className="flex items-center gap-4 pr-6 border-r border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-white/90 border border-white/10">
                     <span className="material-symbols-outlined text-2xl">calendar_today</span>
                   </div>
                   <div className="flex-grow">
-                    <span className="block font-sans text-[10px] font-bold text-gray-400 uppercase tracking-wider">Check-in</span>
+                    <span className="block font-sans text-[10px] font-bold text-white/60 uppercase tracking-wider">Check-in</span>
                     <input
                       type="date"
-                      className="block w-full font-sans text-base font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0 cursor-pointer"
+                      className="block w-full font-sans text-base font-bold text-white bg-transparent border-none p-0 focus:ring-0 cursor-pointer [color-scheme:dark]"
                     />
                   </div>
                 </div>
 
                 {/* 2. Check-out */}
-                <div className="flex items-center gap-4 px-4 pr-6 border-r border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-600 border border-gray-100">
+                <div className="flex items-center gap-4 px-4 pr-6 border-r border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-white/90 border border-white/10">
                     <span className="material-symbols-outlined text-2xl">calendar_month</span>
                   </div>
                   <div className="flex-grow">
-                    <span className="block font-sans text-[10px] font-bold text-gray-400 uppercase tracking-wider">Check-out</span>
+                    <span className="block font-sans text-[10px] font-bold text-white/60 uppercase tracking-wider">Check-out</span>
                     <input
                       type="date"
-                      className="block w-full font-sans text-base font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0 cursor-pointer"
+                      className="block w-full font-sans text-base font-bold text-white bg-transparent border-none p-0 focus:ring-0 cursor-pointer [color-scheme:dark]"
                     />
                   </div>
                 </div>
 
                 {/* 3. Guests */}
-                <div className="flex items-center gap-4 px-4 pr-6 border-r border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-600 border border-gray-100">
+                <div className="flex items-center gap-4 px-4 pr-6 border-r border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-white/90 border border-white/10">
                     <span className="material-symbols-outlined text-2xl">group</span>
                   </div>
                   <div className="flex-grow">
-                    <span className="block font-sans text-[10px] font-bold text-gray-400 uppercase tracking-wider">Guests</span>
-                    <select className="block w-full font-sans text-base font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0 cursor-pointer">
-                      <option>1 Guest</option>
-                      <option>2 Guests</option>
-                      <option>3 Guests</option>
-                      <option>4+ Guests</option>
+                    <span className="block font-sans text-[10px] font-bold text-white/60 uppercase tracking-wider">Guests</span>
+                    <select className="block w-full font-sans text-base font-bold text-white bg-transparent border-none p-0 focus:ring-0 cursor-pointer">
+                      <option className="text-black bg-white">1 Guest</option>
+                      <option className="text-black bg-white">2 Guests</option>
+                      <option className="text-black bg-white">3 Guests</option>
+                      <option className="text-black bg-white">4+ Guests</option>
                     </select>
                   </div>
                 </div>
 
                 {/* 4. Search Button (Shifted Inside Searchbar) */}
                 <div className="flex items-center justify-center pl-4">
-                  <Link 
-                    to="/stay" 
+                  <Link
+                    to="/stay"
                     className="w-full bg-[#1e75eb] hover:bg-[#155fc0] text-white py-4 rounded-2xl font-sans text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all duration-200 transform hover:scale-102 active:scale-98 whitespace-nowrap"
                   >
                     <span className="material-symbols-outlined text-base font-bold">search</span>
@@ -210,33 +210,33 @@ function Home() {
 
         {/* Mobile Search Bar - Displayed right below the hero image slider on mobile screens */}
         <div className="px-6 mt-[-32px] relative z-30 block md:hidden">
-          <div className="bg-white rounded-[24px] shadow-xl border border-black/5 p-6">
+          <div className="bg-white/40 backdrop-blur-md rounded-[24px] shadow-xl border border-white/30 p-6">
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-                  <span className="material-symbols-outlined text-gray-500 text-lg">calendar_today</span>
+                <div className="flex items-center gap-3 p-3 bg-white/20 rounded-xl border border-white/20">
+                  <span className="material-symbols-outlined text-gray-700 text-lg">calendar_today</span>
                   <div className="flex-grow">
-                    <span className="block font-sans text-[8px] font-semibold text-gray-400 uppercase tracking-wider">Check-in</span>
+                    <span className="block font-sans text-[8px] font-semibold text-gray-500 uppercase tracking-wider">Check-in</span>
                     <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" />
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-                  <span className="material-symbols-outlined text-gray-500 text-lg">calendar_month</span>
+                <div className="flex items-center gap-3 p-3 bg-white/20 rounded-xl border border-white/20">
+                  <span className="material-symbols-outlined text-gray-700 text-lg">calendar_month</span>
                   <div className="flex-grow">
-                    <span className="block font-sans text-[8px] font-semibold text-gray-400 uppercase tracking-wider">Check-out</span>
+                    <span className="block font-sans text-[8px] font-semibold text-gray-500 uppercase tracking-wider">Check-out</span>
                     <input type="date" className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0" />
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-                <span className="material-symbols-outlined text-gray-500">group</span>
+              <div className="flex items-center gap-3 p-3 bg-white/20 rounded-xl border border-white/20">
+                <span className="material-symbols-outlined text-gray-700">group</span>
                 <div className="flex-grow">
-                  <span className="block font-sans text-[8px] font-semibold text-gray-400 uppercase tracking-wider">Guests</span>
+                  <span className="block font-sans text-[8px] font-semibold text-gray-500 uppercase tracking-wider">Guests</span>
                   <select className="block w-full font-sans text-xs font-bold text-gray-800 bg-transparent border-none p-0 focus:ring-0">
-                    <option>1 Guest</option>
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
+                    <option className="text-black bg-white">1 Guest</option>
+                    <option className="text-black bg-white">2 Guests</option>
+                    <option className="text-black bg-white">3 Guests</option>
                   </select>
                 </div>
               </div>
@@ -254,11 +254,8 @@ function Home() {
       <section id="about" className="py-24 px-6 md:py-28 bg-gradient-to-br from-[#516C60] to-[#34463e] text-white">
         <div className="max-w-3xl mx-auto reveal space-y-8">
           <div className="space-y-4">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
-              OUR PHILOSOPHY
-            </span>
             <h2 className="font-serif text-3xl md:text-5xl text-white font-medium leading-tight">
-              A refuge carved carefully for <span className="italic font-light text-[#cca85a]">silent minds.</span>
+              Redefining Experiential <span className="italic font-light text-[#cca85a]">Luxury</span>
             </h2>
             <h3 className="font-serif text-xl text-white/80 font-light">Welcome to Avasaa Stays</h3>
           </div>
@@ -296,21 +293,21 @@ function Home() {
       </section>
 
       {/* Section 3: Accommodation Banner */}
-      <section className="w-full relative h-[45vh] md:h-[60vh] overflow-hidden group">
+      <section className="w-full relative h-[65vh] md:h-[80vh] overflow-hidden group">
         <Link to="/stay" className="block w-full h-full relative cursor-pointer">
           {/* Background Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
             style={{ backgroundImage: `url(${stayHero})` }}
           />
           {/* Subtle Dark Vignette Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/45 to-transparent transition-all duration-300" />
-          
+
           {/* Content Overlay */}
           <div className="absolute inset-0 flex items-center px-8 md:px-20 max-w-7xl mx-auto">
             <div className="flex items-center gap-6 reveal">
               {/* Vertical BOOK tag */}
-              <div 
+              <div
                 className="font-sans text-[10px] md:text-xs tracking-[0.4em] font-semibold text-[#cca85a] uppercase border-r border-[#cca85a]/30 pr-4 py-2 select-none"
                 style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
               >
@@ -322,7 +319,7 @@ function Home() {
                   Accommodation
                 </h2>
                 <p className="font-serif text-lg md:text-2xl text-white/90 italic font-light flex items-center">
-                  at Stone House <span className="font-sans not-italic text-lg md:text-2xl ml-2 tracking-tighter text-white/90">»</span>
+                  at Avasaa <span className="font-sans not-italic text-lg md:text-2xl ml-2 tracking-tighter text-white/90">»</span>
                 </p>
               </div>
             </div>
@@ -331,10 +328,10 @@ function Home() {
       </section>
 
       {/* Section 4: Experiences */}
-      <section id="experiences" className="py-28 px-6 max-w-7xl mx-auto">
+      <section id="experiences" className="py-16 px-6 max-w-7xl mx-auto">
         <div className="w-full">
           {/* Centered Editorial Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-10 reveal">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary block">
               Immerse Yourself
             </span>
@@ -347,7 +344,7 @@ function Home() {
           </div>
 
           {/* 6-Column Text-Only Experiences Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full mt-10">
             {[
               {
                 title: "Wood-Fired Sauna",
@@ -376,11 +373,9 @@ function Home() {
             ].map((exp, idx) => (
               <div
                 key={idx}
-                className={`px-8 md:px-12 py-10 md:py-12 text-center space-y-4 reveal border-b border-primary/10 md:border-b-0 ${
-                  idx % 3 !== 2 ? 'md:border-r border-primary/10' : ''
-                } ${
-                  idx >= 3 ? 'md:border-t border-primary/10' : ''
-                } last:border-b-0`}
+                className={`px-8 md:px-12 py-6 md:py-8 text-center space-y-4 reveal border-b border-primary/10 md:border-b-0 ${idx % 3 !== 2 ? 'md:border-r border-primary/10' : ''
+                  } ${idx >= 3 ? 'md:border-t border-primary/10' : ''
+                  } last:border-b-0`}
               >
                 <h3 className="font-serif text-2xl md:text-3xl text-secondary font-semibold leading-tight tracking-wide">
                   {exp.title}
@@ -392,59 +387,59 @@ function Home() {
             ))}
           </div>
 
-        {/* Featured Wide Banner — Google Maps Location */}
-        <div className="w-full reveal mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-[40px] bg-surface-container-low shadow-lg border border-outline-variant/30">
-            {/* Left side: Google Map */}
-            <div className="relative h-80 md:h-[420px] overflow-hidden">
-              <iframe
-                title="Avasaa Café and Stay Location"
-                src="https://maps.google.com/maps?q=Avasaa%20Cafe%20and%20Stay%20Jibhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-
-            {/* Right side: Location info card */}
-            <div className="bg-[#c2a25a] text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px]">
-              {/* Top-left decoration badge */}
-              <div className="absolute top-8 left-8 opacity-25">
-                <span className="material-symbols-outlined text-4xl">location_on</span>
+          {/* Featured Wide Banner — Google Maps Location */}
+          <div className="w-full reveal mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-[40px] bg-surface-container-low shadow-lg border border-outline-variant/30">
+              {/* Left side: Google Map */}
+              <div className="relative h-80 md:h-[420px] overflow-hidden">
+                <iframe
+                  title="Avasaa Café and Stay Location"
+                  src="https://maps.google.com/maps?q=Avasaa%20Cafe%20and%20Stay%20Jibhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
 
-              {/* Background Pine Trees Silhouette */}
-              <div className="absolute right-[-40px] bottom-[-20px] opacity-15 pointer-events-none select-none">
-                <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
-              </div>
+              {/* Right side: Location info card */}
+              <div className="bg-[#c2a25a] text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px]">
+                {/* Top-left decoration badge */}
+                <div className="absolute top-8 left-8 opacity-25">
+                  <span className="material-symbols-outlined text-4xl">location_on</span>
+                </div>
 
-              {/* Card Typography */}
-              <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
-                Find Us
-              </span>
-              <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
-                Seri Village,<br />Jibhi
-              </h3>
-              <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
-                Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
-              </p>
-              <a
-                href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
-              >
-                <span className="material-symbols-outlined text-sm">directions</span>
-                Get Directions
-              </a>
+                {/* Background Pine Trees Silhouette */}
+                <div className="absolute right-[-40px] bottom-[-20px] opacity-15 pointer-events-none select-none">
+                  <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
+                </div>
+
+                {/* Card Typography */}
+                <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
+                  Find Us
+                </span>
+                <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
+                  Seri Village,<br />Jibhi
+                </h3>
+                <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
+                  Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
+                </p>
+                <a
+                  href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
+                >
+                  <span className="material-symbols-outlined text-sm">directions</span>
+                  Get Directions
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Section 6: Gallery — Decorated & Colored */}
       <section id="gallery" className="py-24 px-6 bg-[#EFE6E1] relative overflow-hidden">
@@ -517,9 +512,9 @@ function Home() {
       </section>
 
       {/* Section 7: Testimonials */}
-      <section className="bg-surface-container py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-5xl text-center text-primary mb-16 reveal font-medium">
+      <section className="bg-surface-container py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-5xl text-center text-primary mb-12 reveal font-medium">
             Voices From The Mountains
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

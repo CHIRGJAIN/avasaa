@@ -62,7 +62,7 @@ function RoomDetail() {
         pineSlide3,
         pineSlide4,
       ],
-      aboutLong: 'Tucked away in a private corner of the property, the Pine Chalet is a celebration of raw organic textures. With its private balcony and hand-selected wood paneling, it offers an immersive experience into the surrounding forest. Every element — from the hand-selected wood paneling to the stone fireplace — is chosen to immerse you in the surrounding nature. Wake up to birdsong filtering through your private balcony, and end the day by the crackling fire under a blanket of stars.',
+      aboutLong: 'Tucked away in a private corner of the property, the Anandaa is a celebration of raw organic textures. With its private balcony and hand-selected wood paneling, it offers an immersive experience into the surrounding forest. Every element — from the hand-selected wood paneling to the stone fireplace — is chosen to immerse you in the surrounding nature. Wake up to birdsong filtering through your private balcony, and end the day by the crackling fire under a blanket of stars.',
       highlights: [
         { icon: 'wifi', text: 'Free Wi-Fi' },
         { icon: 'whatshot', text: 'Stone Fireplace' },
@@ -176,7 +176,7 @@ function RoomDetail() {
       ],
       faqs: [
         { q: 'What is the check-in and check-out time?', a: 'Check-in is at 2:00 PM and check-out is at 11:00 AM. Early check-in can be arranged based on availability.' },
-        { q: 'Is the studio suitable for families?', a: 'The Oak Studio is designed for 1-2 guests. For families, we recommend the Pine Chalet or Cedar Suite.' },
+        { q: 'Is the studio suitable for families?', a: 'The Oak Studio is designed for 1-2 guests. For families, we recommend the Anandaa or Cedar Suite.' },
         { q: 'Does the studio have heating?', a: 'Yes, the studio has a portable heater during winters. The thick log walls also provide excellent natural insulation.' },
         { q: 'Can I access the other room amenities?', a: 'Common amenities like the bonfire circle, yoga deck, and garden trails are accessible to all guests regardless of room type.' },
         { q: 'Is there parking available?', a: 'Yes, complimentary parking is available near the main entrance of the property.' },

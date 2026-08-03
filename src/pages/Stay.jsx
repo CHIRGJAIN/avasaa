@@ -6,6 +6,124 @@ import bonfireIllustration from '../assets/bonfire_illustration.png';
 import chefIllustration from '../assets/chef_illustration.png';
 import trailIllustration from '../assets/trail_illustration.png';
 
+function RoomCard({ room, isEven }) {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const slideImages = room.images || [room.image];
+
+  const handleNext = () => {
+    setSlideIndex((prev) => (prev + 1) % slideImages.length);
+  };
+
+  const handlePrev = () => {
+    setSlideIndex((prev) => (prev - 1 + slideImages.length) % slideImages.length);
+  };
+
+  return (
+    <section className="grid grid-cols-1 md:grid-cols-2 bg-[#34463e] text-white w-full overflow-hidden">
+      {/* Slider Column */}
+      <div className={`relative h-80 md:h-auto min-h-[360px] md:min-h-[550px] overflow-hidden group ${
+        isEven ? 'md:order-1' : 'md:order-2'
+      }`}>
+        {/* Slides */}
+        {slideImages.map((img, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              idx === slideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
+          >
+            <img
+              src={img}
+              alt={`${room.name} view ${idx + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+
+        {/* Navigation Arrows */}
+        {slideImages.length > 1 && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-black/80 hover:text-black z-20 transition-all shadow"
+              aria-label="Previous slide"
+            >
+              <span className="material-symbols-outlined font-bold">chevron_left</span>
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-black/80 hover:text-black z-20 transition-all shadow"
+              aria-label="Next slide"
+            >
+              <span className="material-symbols-outlined font-bold">chevron_right</span>
+            </button>
+          </>
+        )}
+
+        {/* Dots Indicators */}
+        {slideImages.length > 1 && (
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            {slideImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSlideIndex(idx)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  idx === slideIndex ? 'bg-white w-4' : 'bg-white/40'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Info Column */}
+      <div className={`p-8 md:p-12 lg:p-20 flex flex-col justify-center space-y-6 bg-[#34463e] ${
+        isEven ? 'md:order-2' : 'md:order-1'
+      }`}>
+        <div className="space-y-1">
+          <h2 className="font-serif text-3xl md:text-5xl text-white font-medium">{room.name}</h2>
+          {room.occupancy && (
+            <p className="font-serif text-xl md:text-3xl text-white/90 italic font-light">
+              {room.occupancy}
+            </p>
+          )}
+        </div>
+
+        <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
+          {room.description}
+        </p>
+
+        {/* Amenities List - 2 columns with dashes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 font-sans text-sm text-white/70 font-light pt-2">
+          {room.amenities.map((amenity, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <span className="text-white/40">-</span>
+              <span>{amenity}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Price */}
+        <div className="pt-4 border-t border-white/10">
+          <span className="font-sans text-2xl md:text-3xl text-white font-light tracking-wide">
+            {room.priceLabel || `${room.priceInr.toLocaleString('en-IN')}/N`}
+          </span>
+        </div>
+
+        <div>
+          <Link
+            to={`/book?roomId=${room.id}`}
+            className="inline-block border border-white/20 hover:border-white text-white bg-transparent hover:bg-white hover:text-[#34463e] py-4 px-10 font-sans text-xs font-bold uppercase tracking-widest text-center transition-all duration-300 w-fit"
+          >
+            INQUIRE TO BOOK
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Stay() {
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,11 +162,26 @@ function Stay() {
         </div>
       </header>
 
+      {/* Section Heading */}
+      <section className="py-20 md:py-28 bg-[#f7f5f0] text-center px-6">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <span className="font-sans text-xs font-semibold uppercase tracking-[0.3em] text-[#516C60]">
+            Where You'll Stay
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl text-[#1a1a1a] font-medium leading-tight">
+            Rooms Crafted for<br className="hidden md:block" /> <span className="italic font-light">Stillness</span>
+          </h2>
+          <p className="font-sans text-base md:text-lg text-[#555] font-light leading-relaxed max-w-xl mx-auto">
+            Each room at Avasaa is a quiet invitation to slow down — designed with warmth, wood, and the mountain air in mind.
+          </p>
+        </div>
+      </section>
+
       {/* Main content listing rooms */}
-      <main className="max-w-7xl mx-auto px-6 py-24">
+      <main className="pt-0 pb-12">
         {loading ? (
           /* Premium Skeleton Loader */
-          <div className="space-y-24 max-w-5xl mx-auto">
+          <div className="space-y-24 max-w-5xl mx-auto px-6">
             {[1, 2].map((n) => (
               <div key={n} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-pulse">
                 <div className="lg:col-span-7 bg-surface-container-high rounded-3xl aspect-[4/3]"></div>
@@ -62,66 +195,10 @@ function Stay() {
             ))}
           </div>
         ) : (
-          <div className="space-y-24 max-w-6xl mx-auto">
-            {rooms.map((room, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <section 
-                  key={room.id}
-                  className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
-                >
-                  {/* Image Column */}
-                  <div className={`lg:col-span-7 group overflow-hidden rounded-3xl shadow-lg ${
-                    isEven ? '' : 'lg:order-2'
-                  }`}>
-                    <div 
-                      className="aspect-[4/3] w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url('${room.image}')` }}
-                    ></div>
-                  </div>
-
-                  {/* Info Column */}
-                  <div className={`lg:col-span-5 flex flex-col justify-center space-y-6 ${
-                    isEven ? 'lg:pl-12' : 'lg:pr-12 lg:order-1'
-                  }`}>
-                    <span className="font-sans text-xs font-semibold uppercase tracking-widest text-secondary block">
-                      {room.type}
-                    </span>
-                    <h2 className="font-serif text-3xl md:text-4xl text-primary font-semibold">{room.name}</h2>
-                    <p className="font-sans text-sm font-semibold text-on-surface-variant/80">{room.occupancy}</p>
-                    <p className="font-sans text-base text-on-surface-variant font-light leading-relaxed">
-                      {room.description}
-                    </p>
-
-                    {/* Amenities list */}
-                    <div className="grid grid-cols-2 gap-y-4 py-6 border-t border-outline-variant/40">
-                      {room.amenities.map((amenity, amIdx) => (
-                        <div key={amIdx} className="flex items-center gap-3">
-                          <span className="material-symbols-outlined text-primary">
-                            {room.icons ? room.icons[amIdx] : 'check_circle'}
-                          </span>
-                          <span className="font-sans text-xs text-on-surface">{amenity}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-baseline gap-2 py-2">
-                      <span className="font-serif text-2xl font-bold text-primary">₹{room.priceInr.toLocaleString('en-IN')}</span>
-                      <span className="font-sans text-xs text-on-surface-variant font-light">/ night</span>
-                    </div>
-
-                    <div className="flex gap-4 pt-2">
-                      <Link 
-                        to={`/book?roomId=${room.id}`}
-                        className="bg-primary text-on-primary px-8 py-3 rounded-2xl font-sans text-xs font-semibold uppercase tracking-widest hover:bg-[#3e5349] transition-colors shadow-md scale-100 hover:scale-105 active:scale-95 duration-200"
-                      >
-                        Book This Room
-                      </Link>
-                    </div>
-                  </div>
-                </section>
-              );
-            })}
+          <div className="w-full space-y-0">
+            {rooms.map((room, idx) => (
+              <RoomCard key={room.id} room={room} isEven={idx % 2 === 0} />
+            ))}
           </div>
         )}
       </main>
