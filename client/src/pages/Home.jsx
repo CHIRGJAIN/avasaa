@@ -438,57 +438,57 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Featured Wide Banner — Google Maps Location */}
-          <div className="w-full reveal mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 overflow-hidden rounded-[40px] bg-surface-container-low shadow-lg border border-outline-variant/30">
-              {/* Left side: Google Map */}
-              <div className="relative h-80 md:h-[420px] overflow-hidden md:col-span-2">
-                <iframe
-                  title="Avasaa Café and Stay Location"
-                  src="https://maps.google.com/maps?q=Avasaa%20Cafe%20and%20Stay%20Jibhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+      {/* Featured Wide Banner — Google Maps Location (Full width touching the corners) */}
+      <section className="w-full reveal mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 overflow-hidden bg-surface-container-low shadow-lg">
+          {/* Left side: Google Map */}
+          <div className="relative h-80 md:h-[420px] overflow-hidden md:col-span-2">
+            <iframe
+              title="Avasaa Café and Stay Location"
+              src="https://maps.google.com/maps?q=Avasaa%20Cafe%20and%20Stay%20Jibhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-              {/* Right side: Location info card */}
-              <div className="bg-white text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px] md:col-span-1 border-l border-outline-variant/20">
-                {/* Top-left decoration badge */}
-                <div className="absolute top-8 left-8 opacity-25">
-                  <span className="material-symbols-outlined text-4xl">location_on</span>
-                </div>
-
-                {/* Background Pine Trees Silhouette */}
-                <div className="absolute right-[-40px] bottom-[-20px] opacity-5 pointer-events-none select-none">
-                  <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
-                </div>
-
-                {/* Card Typography */}
-                <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
-                  Find Us
-                </span>
-                <h3 className="font-sans text-3xl md:text-4xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
-                  Seri Village,<br />Jibhi
-                </h3>
-                <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
-                  Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
-                </p>
-                <a
-                  href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
-                >
-                  <span className="material-symbols-outlined text-sm">directions</span>
-                  Get Directions
-                </a>
-              </div>
+          {/* Right side: Location info card */}
+          <div className="bg-white text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px] md:col-span-1 border-l border-outline-variant/20">
+            {/* Top-left decoration badge */}
+            <div className="absolute top-8 left-8 opacity-25">
+              <span className="material-symbols-outlined text-4xl">location_on</span>
             </div>
+
+            {/* Background Pine Trees Silhouette */}
+            <div className="absolute right-[-40px] bottom-[-20px] opacity-5 pointer-events-none select-none">
+              <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
+            </div>
+
+            {/* Card Typography */}
+            <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
+              Find Us
+            </span>
+            <h3 className="font-sans text-3xl md:text-4xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
+              Seri Village,<br />Jibhi
+            </h3>
+            <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
+              Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
+            </p>
+            <a
+              href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
+            >
+              <span className="material-symbols-outlined text-sm">directions</span>
+              Get Directions
+            </a>
           </div>
         </div>
       </section>
