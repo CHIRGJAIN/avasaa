@@ -7,6 +7,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Avaasa API is Live 🚀"
+    });
+});
+
 // Mount API base routes
 app.use('/api', apiRoutes);
 
