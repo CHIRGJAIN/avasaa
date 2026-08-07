@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getInstagramPhotos } from '../services/api';
 import heroImg from '../assets/hero.jpg';
 import heroBalcony from '../assets/hero_balcony.jpg';
 import heroWinter from '../assets/hero_winter.jpg';
@@ -75,8 +76,7 @@ function Home() {
   }, [slides.length]);
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/instagram/photos')
-      .then((res) => res.json())
+    getInstagramPhotos()
       .then((data) => {
         if (data && data.data) {
           setInstagramPhotos(data.data);
