@@ -459,32 +459,32 @@ function Home() {
           </div>
 
           {/* Right side: Location info card */}
-          <div className="bg-white text-[#516C60] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px] md:col-span-1 border-l border-outline-variant/20">
+          <div className="bg-[#516C60] text-white p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px] md:col-span-1 border-l border-white/10">
             {/* Top-left decoration badge */}
-            <div className="absolute top-8 left-8 opacity-25">
-              <span className="material-symbols-outlined text-4xl">location_on</span>
+            <div className="absolute top-8 left-8 opacity-20">
+              <span className="material-symbols-outlined text-4xl text-white">location_on</span>
             </div>
 
             {/* Background Pine Trees Silhouette */}
-            <div className="absolute right-[-40px] bottom-[-20px] opacity-5 pointer-events-none select-none">
+            <div className="absolute right-[-40px] bottom-[-20px] opacity-10 pointer-events-none select-none text-white">
               <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
             </div>
 
             {/* Card Typography */}
-            <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-[#516C60]/70 mb-4 block">
+            <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-white/70 mb-4 block">
               Find Us
             </span>
-            <h3 className="font-sans text-3xl md:text-4xl font-black uppercase tracking-wider leading-[0.95] text-[#516C60] mb-6">
+            <h3 className="font-sans text-3xl md:text-4xl font-black uppercase tracking-wider leading-[0.95] text-white mb-6">
               Seri Village,<br />Jibhi
             </h3>
-            <p className="font-sans text-sm text-[#516C60]/80 font-light leading-relaxed mb-6 max-w-xs">
+            <p className="font-sans text-sm text-white/80 font-light leading-relaxed mb-6 max-w-xs">
               Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
             </p>
             <a
               href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#516C60] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#3e5349] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
+              className="inline-flex items-center gap-2 bg-white text-[#516C60] px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#f5f2eb] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
             >
               <span className="material-symbols-outlined text-sm">directions</span>
               Get Directions
