@@ -7,43 +7,56 @@ import thumb3 from '../assets/thumb3.jpg';
 import thumb4 from '../assets/thumb4.png';
 
 function GuestSlider() {
-  const images = [thumb1, thumb2, thumb3, thumb4];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  const baseImages = [thumb1, thumb2, thumb3, thumb4];
+  // Duplicate images list to ensure a seamless infinite scrolling loop
+  const images = [...baseImages, ...baseImages, ...baseImages];
 
   return (
-    <div className="w-full relative h-[320px] md:h-[500px] overflow-hidden rounded-[32px] shadow-md group border border-outline-variant/20">
-      {images.map((img, idx) => (
-        <div
-          key={idx}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-        >
-          <img
-            src={img}
-            alt={`Guest Moment ${idx + 1}`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
-      {/* Slider Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2.5 z-20 bg-black/15 backdrop-blur-md px-4 py-2 rounded-full">
-        {images.map((_, idx) => (
-          <button
+    <div className="w-full overflow-hidden py-6 relative">
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-256px * 4 - 16px * 4));
+          }
+        }
+        @keyframes scroll-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-192px * 4 - 16px * 4));
+          }
+        }
+        .animate-scroll {
+          display: flex;
+          width: max-content;
+          animation: scroll 25s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll-mobile 18s linear infinite;
+          }
+        }
+      `}</style>
+      
+      <div className="animate-scroll gap-4">
+        {images.map((img, idx) => (
+          <div
             key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'bg-white scale-120' : 'bg-white/40 hover:bg-white/70'
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
+            className="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-sm border border-[#dfd3cc]/40 hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src={img}
+              alt={`Guest Moment ${idx + 1}`}
+              className="w-full h-full object-cover pointer-events-none select-none"
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -147,25 +160,24 @@ function About() {
           </div>
         </div>
 
-        {/* Separator Line */}
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#dfd3cc] to-transparent w-full"></div>
+      </div> {/* Close max-w-6xl wrapper */}
 
-        {/* Section 3: Guest Image Slider */}
-        <div className="space-y-6 reveal max-w-5xl mx-auto">
-          <div className="text-center space-y-2">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
-              GUEST DIARIES
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-primary font-medium">
-              Moments Capturing Stillness
-            </h2>
-            <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed max-w-md mx-auto">
-              A look at how our guests spend their time, slow down, and soak in the beauty of Avaasa.
-            </p>
-          </div>
+      {/* Section 3: Guest Image Slider */}
+      <div className="space-y-6 reveal py-6 w-full mt-20">
+        <div className="text-center space-y-2 max-w-5xl mx-auto px-6">
+          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#cca85a] block">
+            GUEST DIARIES
+          </span>
+          <h2 className="font-serif text-3xl md:text-4xl text-primary font-medium">
+            Moments Capturing Stillness
+          </h2>
+          <p className="font-sans text-sm text-on-surface-variant font-light leading-relaxed max-w-md mx-auto">
+            A look at how our guests spend their time, slow down, and soak in the beauty of Avaasa.
+          </p>
+        </div>
+        <div className="w-full px-0">
           <GuestSlider />
         </div>
-
       </div>
     </div>
   );

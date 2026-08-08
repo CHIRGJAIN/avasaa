@@ -87,36 +87,6 @@ function Home() {
       });
   }, []);
 
-  const roomSummaries = [
-    {
-      id: 'pine-chalet',
-      name: 'Anandaa',
-      type: 'Mountain Refuge',
-      description: '2 Adults • Forest View',
-      price: '₹18,000',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0sgw4-SXq_qXpKloANjXlNkl_q5VFMDtF9bJPtuoLQPVB2sWocdu_w44u87THUY2ucSgdaaKOqxa-jqKEUsNMZaROwdERXOiJL4yu79PP4rufasEEw-h6Kv_MS4aE8diaqjFaNN7UjxtvzgVklzifP3Ukq4GJ6QJBAQAJrcnw2W1HCx3yt5gdit_4_GkPeIUZQVvJ-cfzmJOAQluNO457NvNnc_22xy6Um_p8JKJqkRtK6LKTBgzd',
-      icons: ['wifi', 'whatshot', 'local_cafe']
-    },
-    {
-      id: 'cedar-suite',
-      name: 'Tattva',
-      type: 'Elevated Luxury',
-      description: '4 Guests • River Facing',
-      price: '₹24,500',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfXjs_vO-186Ogx0iNtMIh8G0fhMHT2mQNu75hrqN6Ue1EWfqwG_h6neboJYenTLHjjBj0GRVGPSjLYtkXvsUTHb9w39uQ4VMtkHwUoAImjEt-CoWk_fJyWbuEqxny2tDP_zPREL41jsyyfG_fQ82W7xZI-c6za6GU5J1Q58mOLzAdql-27jjC0j50UuLc7_wEWRJs0kJ843vFLO2_HiJ9vMrq2H9g2YcUcRO0Z9tOtzPAMywpTmBB',
-      icons: ['wifi', 'balcony', 'ac_unit']
-    },
-    {
-      id: 'oak-studio',
-      name: 'Samsara',
-      type: 'Intimate Escape',
-      description: '2 Guests • Garden View',
-      price: '₹15,000',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0qvBsifYopqnouXKhQ5nbi3ZRpZzPDsP58-StYZyAqbC0kFOFXBi2X0qfbl7huJBmxGwxNOnb5cR5mbttqJbID8DdjetiCBiP186rIRPH_SZZBbQ4ChywlZjJ3TEtGeU1ED6k2CaEIL9vc25pU6E7s6W2u8Wq2kqQXp0YD5ONiQ94bgjL-224VzsZ4QEhAcfSiSVmsJoh5_acaOJQwtCHgDaepwtyc-A_HQdFkinTnNnRcODk7dVl',
-      icons: ['menu_book', 'light_mode', 'bed']
-    }
-  ];
-
   return (
     <div>
       {/* Hero Section - Full Bleed */}
@@ -296,7 +266,7 @@ function Home() {
             <h2 className="font-serif text-3xl md:text-5xl text-white font-medium leading-tight">
               Redefining Experiential <span className="italic font-light text-[#cca85a]">Luxury</span>
             </h2>
-            <h3 className="font-serif text-xl text-white/80 font-light">Welcome to Avasaa Stays</h3>
+            <h3 className="font-serif text-xl text-white/80 font-light">Read a book</h3>
           </div>
 
           {/* High-end introduction statement */}
@@ -375,7 +345,7 @@ function Home() {
               Read Our Stories
             </span>
             <h2 className="font-serif text-3xl md:text-5xl text-primary font-medium leading-tight">
-              Mountain Journal
+              Mountain Experiences
             </h2>
             <p className="font-sans text-base text-on-surface-variant font-light leading-relaxed">
               A collection of moments, stories, and activities from our little corner of the Himalayas.
@@ -458,37 +428,9 @@ function Home() {
             ></iframe>
           </div>
 
-          {/* Right side: Location info card */}
-          <div className="bg-[#516C60] text-white p-10 md:p-16 flex flex-col justify-center relative overflow-hidden h-80 md:h-[420px] md:col-span-1 border-l border-white/10">
-            {/* Top-left decoration badge */}
-            <div className="absolute top-8 left-8 opacity-20">
-              <span className="material-symbols-outlined text-4xl text-white">location_on</span>
-            </div>
-
-            {/* Background Pine Trees Silhouette */}
-            <div className="absolute right-[-40px] bottom-[-20px] opacity-10 pointer-events-none select-none text-white">
-              <span className="material-symbols-outlined text-[240px] leading-none">forest</span>
-            </div>
-
-            {/* Card Typography */}
-            <span className="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-white/70 mb-4 block">
-              Find Us
-            </span>
-            <h3 className="font-sans text-3xl md:text-4xl font-black uppercase tracking-wider leading-[0.95] text-white mb-6">
-              Seri Village,<br />Jibhi
-            </h3>
-            <p className="font-sans text-sm text-white/80 font-light leading-relaxed mb-6 max-w-xs">
-              Avasaa Café and Stay, Seri Rd, Jibhi, Tandi, Himachal Pradesh 175123
-            </p>
-            <a
-              href="https://www.google.com/maps/search/Avasaa+Cafe+and+Stay+Seri+Rd+Jibhi+Tandi+Himachal+Pradesh+175123"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-[#516C60] px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-[#f5f2eb] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 w-fit"
-            >
-              <span className="material-symbols-outlined text-sm">directions</span>
-              Get Directions
-            </a>
+          {/* Right side: Cozy cabin interior image banner */}
+          <div className="h-80 md:h-[420px] md:col-span-1 relative overflow-hidden">
+            <img src={cabinInterior} className="w-full h-full object-cover" alt="Avasaa Cabin Interior" />
           </div>
         </div>
       </section>
